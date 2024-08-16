@@ -1,6 +1,42 @@
-/* В этом файле вы опишете значения переменных в разных цветовых схемах.
-Придерживайтесь такого именования классов:
-✦ theme-dark — класс тёмной темы
-✦ theme-light — класс светлой темы
-✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
-*/
+.page.theme-light {
+  --font-weight-header: 700;
+  --font-weight-main: 400;
+  --background-color: #ffffff;
+  --accent-color: #000000;
+  --border-color: #000000;
+  --background-image: repeating-linear-gradient(
+      #808080 0px 1px,
+      transparent 1px 4px
+    ),
+    repeating-linear-gradient(90deg, #808080 0px 1px, transparent 1px 4px);
+}
+
+.page.theme-dark {
+  --font-weight-header: 785;
+  --font-weight-main: 465;
+  --background-color: #000000;
+  --accent-color: #00cc14;
+  --border-color: #00cc14;
+  --background-image: repeating-linear-gradient(
+      90deg,
+      #00660a 0px 1px,
+      transparent 1px 4px
+    ),
+    repeating-linear-gradient(180deg, #00660a 0px 1px, transparent 1px 4px);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --font-weight-header: 785;
+    --font-weight-main: 465;
+    --background-color: #000000;
+    --accent-color: #00cc14;
+    --border-color: #00cc14;
+    --background-image: repeating-linear-gradient(
+        90deg,
+        #00660a 0px 1px,
+        transparent 1px 4px
+      ),
+      repeating-linear-gradient(180deg, #00660a 0px 1px, transparent 1px 4px);
+  }
+}
